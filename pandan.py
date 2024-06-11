@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 
 path = 'NanumGothic-Bold.ttf'
-fontprop = fm.FontProperties(fname=path, size=12)
+# fontprop = fm.FontProperties(fname=path, size=12)
 
 try:
     font_prop = fm.FontProperties(fname=font_path)
