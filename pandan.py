@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 def pandan():
     # 데이터 불러오기
-    total_df = pd.read_csv('/BigData/data/LOCAL_PEOPLE_GU_UTF.csv')
+    total_df = pd.read_csv('LOCAL_PEOPLE_GU_UTF.csv')
     
     # 자치구 선택
     sgg_nm = st.sidebar.selectbox("자치구", total_df['자치구코드'].unique(), format_func=code_to_name)
