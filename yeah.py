@@ -13,10 +13,10 @@ import matplotlib.font_manager as fm
 from seViz import code_to_name
 
 # 한글 폰트 설정
-def set_font():
-    path = 'NanumGothic-Bold.ttf'
-    fontprop = fm.FontProperties(fname=path, size=12)  
-    plt.rcParams['font.family'] = fontprop.get_name()
+#def set_font():
+   # path = 'NanumGothic-Bold.ttf'
+   # fontprop = fm.FontProperties(fname=path, size=12)  
+    #plt.rcParams['font.family'] = fontprop.get_name()
 
 def yeah():
     
@@ -53,9 +53,9 @@ def yeah():
     ax.plot(forecast_30days['ds'], forecast_30days['yhat'], label='예측된 평균 생활인구수')
     ax.fill_between(forecast_30days['ds'], forecast_30days['yhat_lower'], forecast_30days['yhat_upper'], color='gray', alpha=0.2, label='예측 범위')
     
-    ax.set_title(f'{code_to_name(sgg_nmz)} {periods}일간 평균 생활인구수 예측', fontproperties=fm.FontProperties(fname='NanumGothic-Bold.ttf'))
-    ax.set_xlabel(f'날짜', fontproperties=fm.FontProperties(fname='NanumGothic-Bold.ttf'))
-    ax.set_ylabel(f'평균 생활인구수', fontproperties=fm.FontProperties(fname='NanumGothic-Bold.ttf'))
+    ax.set_title(f'{code_to_name(sgg_nmz)} {periods}일간 평균 생활인구수 예측')
+    ax.set_xlabel(f'날짜')
+    ax.set_ylabel(f'평균 생활인구수')
     ax.legend()
     
     for tick in ax.get_xticklabels():
