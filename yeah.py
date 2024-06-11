@@ -13,11 +13,13 @@ import matplotlib.font_manager as fm
 from seViz import code_to_name
 
 # 한글 폰트 설정
-path = 'NanumGothic-Bold.ttf'
-fontprop = fm.FontProperties(fname=path, size=12)  
+def set_font():
+    path = 'NanumGothic-Bold.ttf'
+    fontprop = fm.FontProperties(fname=path, size=12)  
+    plt.rcParams['font.family'] = fontprop.get_name()
 
 def yeah():
-
+    
     total_df = pd.read_csv('LOCAL_PEOPLE_GU_UTF.csv')
     total_df['기준일ID'] = pd.to_datetime(total_df['기준일ID'], format='%Y%m%d')
     sgg_nmz = st.sidebar.selectbox("자치구", total_df['자치구코드'].unique(), format_func=code_to_name, key='gu_selectbox')
@@ -51,9 +53,9 @@ def yeah():
     ax.plot(forecast_30days['ds'], forecast_30days['yhat'], label='예측된 평균 생활인구수')
     ax.fill_between(forecast_30days['ds'], forecast_30days['yhat_lower'], forecast_30days['yhat_upper'], color='gray', alpha=0.2, label='예측 범위')
     
-    ax.set_title(f'{code_to_name(sgg_nmz)} {periods}일간 평균 생활인구수 예측', fontproperties=fontprop)
-    ax.set_xlabel(f'날짜', fontproperties=fontprop)
-    ax.set_ylabel(f'평균 생활인구수', fontproperties=fontprop)
+    ax.set_title(f'{code_to_name(sgg_nmz)} {periods}일간 평균 생활인구수 예측', fontproperties=fm.FontProperties(fname='NanumGothic-Bold.ttf'))
+    ax.set_xlabel(f'날짜', fontproperties=fm.FontProperties(fname='NanumGothic-Bold.ttf'))
+    ax.set_ylabel(f'평균 생활인구수', fontproperties=fm.FontProperties(fname='NanumGothic-Bold.ttf'))
     ax.legend()
     
     for tick in ax.get_xticklabels():
