@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 from seViz import code_to_name
 
-path = 'NanumGothic-Bold.ttf'
+path = 'NanumGothic.ttf'
 # fontprop = fm.FontProperties(fname=path, size=12)
 try:
     font_prop = fm.FontProperties(fname=font_path)
