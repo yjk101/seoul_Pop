@@ -14,7 +14,14 @@ import matplotlib.font_manager as fm
 from seViz import code_to_name
 
 path = 'NanumGothic-Bold.ttf'
-fontprop = fm.FontProperties(fname=path, size=12)
+# fontprop = fm.FontProperties(fname=path, size=12)
+try:
+    font_prop = fm.FontProperties(fname=font_path)
+    plt.rcParams['font.family'] = font_prop.get_name()
+    plt.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 깨짐 방지 설정
+    print("폰트 파일이 정상적으로 로드되었습니다.")
+except Exception as e:
+    print(f"폰트 파일 로드 중 오류 발생: {e}")
 
 # Streamlit 애플리케이션
 def maxPop(total_df):
@@ -59,18 +66,18 @@ def maxPop(total_df):
     
     fig, ax = plt.subplots()
     ax.bar(avg_population_head['자치구명'], avg_population_head['총생활인구수'])
-    ax.set_ylabel("평균 생활인구수", fontproperties=fontprop)
-    ax.set_xlabel("자치구", fontproperties=fontprop)
-    ax.set_title(f'{acc_year}년 {selected_month} {selected_time} 평균 생활인구수가 가장 많은 자치구', fontproperties=fontprop)
+    ax.set_ylabel("평균 생활인구수")
+    ax.set_xlabel("자치구")
+    ax.set_title(f'{acc_year}년 {selected_month} {selected_time} 평균 생활인구수가 가장 많은 자치구')
     st.pyplot(fig)
     
     st.markdown("<hr>", unsafe_allow_html=True)
     
     fig, ax = plt.subplots()
     ax.bar(avg_population_tail['자치구명'], avg_population_tail['총생활인구수'])
-    ax.set_ylabel("평균 생활인구수", fontproperties=fontprop)
-    ax.set_xlabel("자치구", fontproperties=fontprop)
-    ax.set_title(f'{acc_year}년 {selected_month} {selected_time} 평균 생활인구수가 가장 적은 자치구', fontproperties=fontprop)
+    ax.set_ylabel("평균 생활인구수")
+    ax.set_xlabel("자치구")
+    ax.set_title(f'{acc_year}년 {selected_month} {selected_time} 평균 생활인구수가 가장 적은 자치구')
     st.pyplot(fig)
     
 
