@@ -14,6 +14,14 @@ import matplotlib.font_manager as fm
 path = 'NanumGothic-Bold.ttf'
 fontprop = fm.FontProperties(fname=path, size=12)
 
+try:
+    font_prop = fm.FontProperties(fname=font_path)
+    plt.rcParams['font.family'] = font_prop.get_name()
+    plt.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 깨짐 방지 설정
+    print("폰트 파일이 정상적으로 로드되었습니다.")
+except Exception as e:
+    print(f"폰트 파일 로드 중 오류 발생: {e}")
+
 def pandan():
     # 데이터 불러오기
     total_df = pd.read_csv('LOCAL_PEOPLE_GU_UTF.csv')
@@ -32,9 +40,9 @@ def pandan():
     fig, ax = plt.subplots()
     grouped_df = filtered_df.groupby('시간대구분')['총생활인구수'].mean()
     grouped_df.plot(kind='line', ax=ax, linestyle='-')
-    ax.set_title(f"{code_to_name(sgg_nm)} 시간대별 평균 생활인구수", fontproperties=fontprop)
-    ax.set_xlabel("시간", fontproperties=fontprop)
-    ax.set_ylabel("평균 생활인구수", fontproperties=fontprop)
+    ax.set_title(f"{code_to_name(sgg_nm)} 시간대별 평균 생활인구수")
+    ax.set_xlabel("시간")
+    ax.set_ylabel("평균 생활인구수")
     st.pyplot(fig)
     
     
