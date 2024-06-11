@@ -14,8 +14,8 @@ import matplotlib.font_manager as fm
 from seViz import code_to_name
 
 font_path = 'NanumGothic-Bold.ttf'  # 나눔고딕 폰트 경로
-font_name = fm.FontProperties(fname=font_path, size=10).get_name()
-plt.rc('font', family=font_name)
+font_name = fm.FontProperties(fname=font_path, size=10) # .get_name()
+# plt.rc('font', family=font_name)
 
 
 # Streamlit 애플리케이션
