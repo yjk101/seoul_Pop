@@ -1,0 +1,12 @@
+prophet==1.1.2
+pandas
+matplotlib
+seaborn
+plotly
+streamlit
+geopandas
+folium
+streamlit-option-menu
+millify
+pingouin
+jupyterlab
