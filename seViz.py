@@ -13,7 +13,7 @@ from millify import prettify
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 
-path = 'NanumGothic-Bold.ttf'
+path = 'NanumGothic.ttf'
 # fontprop = fm.FontProperties(fname=path, size=12)
 try:
     font_prop = fm.FontProperties(fname=font_path)
