@@ -60,19 +60,19 @@ def maxPop(total_df):
     st.markdown("<hr>", unsafe_allow_html=True)
     
     fig, ax = plt.subplots()
-    ax.bar(avg_population_head['자치구명'], avg_population_head['총생활인구수'])
+    ax.bar(avg_population_head['자치구명'], avg_population_head['총생활인구수'], fontproperties=font_name)
     ax.set_ylabel("평균 생활인구수")
     ax.set_xlabel("자치구")
-    ax.set_title(f'{acc_year}년 {selected_month} {selected_time} 평균 생활인구수가 가장 많은 자치구')
+    ax.set_title(f'{acc_year}년 {selected_month} {selected_time} 평균 생활인구수가 가장 많은 자치구', fontproperties=font_name)
     st.pyplot(fig)
     
     st.markdown("<hr>", unsafe_allow_html=True)
     
     fig, ax = plt.subplots()
-    ax.bar(avg_population_tail['자치구명'], avg_population_tail['총생활인구수'])
+    ax.bar(avg_population_tail['자치구명'], avg_population_tail['총생활인구수'], fontproperties=font_name)
     ax.set_ylabel("평균 생활인구수")
     ax.set_xlabel("자치구")
-    ax.set_title(f'{acc_year}년 {selected_month} {selected_time} 평균 생활인구수가 가장 적은 자치구')
+    ax.set_title(f'{acc_year}년 {selected_month} {selected_time} 평균 생활인구수가 가장 적은 자치구', fontproperties=font_name)
     st.pyplot(fig)
     
 
