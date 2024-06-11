@@ -9,5 +9,5 @@ Created on Tue Mar 19 15:39:46 2024
 import pandas as pd
 
 def load_data():
-    data = pd.read_csv('/BigData/data/LOCAL_PEOPLE_GU_UTF.csv')
+    data = pd.read_csv('LOCAL_PEOPLE_GU_UTF.csv')
     return data
