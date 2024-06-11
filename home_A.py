@@ -24,8 +24,8 @@ def home():
     st.markdown("#### 사용한 데이터 첨부 이미지")
 
     # 이미지 파일 경로
-    image_path1 = "D:/BigData/dataImage1.png"  # 이미지 파일 경로를 지정합니다.
-    image_path2 = "D:/BigData/dataImage2.png"
+    image_path1 = "dataImage1.png"  # 이미지 파일 경로를 지정합니다.
+    image_path2 = "dataImage2.png"
     
     target_url = 'https://data.seoul.go.kr/dataList/OA-15439/S/1/datasetView.do'
     
