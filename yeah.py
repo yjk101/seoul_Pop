@@ -13,7 +13,7 @@ import matplotlib.font_manager as fm
 from seViz import code_to_name
 
 # 한글 폰트 설정
-path = 'NanumGothic-Bold.ttf'
+path = 'NanumGothic.ttf'
 # fontprop = fm.FontProperties(fname=path, size=12)  
 
 try:
