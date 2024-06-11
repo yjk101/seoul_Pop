@@ -13,10 +13,8 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 from seViz import code_to_name
 
-font_path = 'NanumGothic-Bold.ttf'  # 나눔고딕 폰트 경로
-font_name = fm.FontProperties(fname=font_path, size=10) # .get_name()
-# plt.rc('font', family=font_name)
-
+path = 'NanumGothic-Bold.ttf'
+fontprop = fm.FontProperties(fname=path, size=12)
 
 # Streamlit 애플리케이션
 def maxPop(total_df):
@@ -61,18 +59,18 @@ def maxPop(total_df):
     
     fig, ax = plt.subplots()
     ax.bar(avg_population_head['자치구명'], avg_population_head['총생활인구수'])
-    ax.set_ylabel("평균 생활인구수", fontproperties=font_name)
-    ax.set_xlabel("자치구", fontproperties=font_name)
-    ax.set_title(f'{acc_year}년 {selected_month} {selected_time} 평균 생활인구수가 가장 많은 자치구', fontproperties=font_name)
+    ax.set_ylabel("평균 생활인구수", fontproperties=fontprop)
+    ax.set_xlabel("자치구", fontproperties=fontprop)
+    ax.set_title(f'{acc_year}년 {selected_month} {selected_time} 평균 생활인구수가 가장 많은 자치구', fontproperties=fontprop)
     st.pyplot(fig)
     
     st.markdown("<hr>", unsafe_allow_html=True)
     
     fig, ax = plt.subplots()
     ax.bar(avg_population_tail['자치구명'], avg_population_tail['총생활인구수'])
-    ax.set_ylabel("평균 생활인구수", fontproperties=font_name)
-    ax.set_xlabel("자치구", fontproperties=font_name)
-    ax.set_title(f'{acc_year}년 {selected_month} {selected_time} 평균 생활인구수가 가장 적은 자치구', fontproperties=font_name)
+    ax.set_ylabel("평균 생활인구수", fontproperties=fontprop)
+    ax.set_xlabel("자치구", fontproperties=fontprop)
+    ax.set_title(f'{acc_year}년 {selected_month} {selected_time} 평균 생활인구수가 가장 적은 자치구', fontproperties=fontprop)
     st.pyplot(fig)
     
 
