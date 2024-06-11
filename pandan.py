@@ -9,6 +9,7 @@ import streamlit as st
 import pandas as pd
 from seViz import code_to_name
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 
 font_path = 'NanumGothic.ttf'  # 나눔고딕 폰트 경로
 font_name = fm.FontProperties(fname=font_path, size=10).get_name()
