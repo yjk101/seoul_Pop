@@ -89,7 +89,7 @@ def seViz(total_df):
     daily_pop = filtered_month.groupby('day')['총생활인구수'].mean().reset_index()
     
     fig, ax = plt.subplots()
-    ax.plot(daily_pop['day'], daily_pop['총생활인구수'], fontproperties=font_name) # , marker='o'
+    ax.plot(daily_pop['day'], daily_pop['총생활인구수']) # , marker='o'
     ax.set_title(f"{code_to_name(sgg_seViz)} 생활인구수 변화", fontproperties=font_name)
     ax.set_xlabel("날짜")
     ax.set_ylabel("생활인구수")
@@ -103,7 +103,7 @@ def seViz(total_df):
     filtered_day = filtered_month[filtered_month['day'] == selected_day]
     
     fig, ax = plt.subplots()
-    ax.plot(filtered_day['시간대구분'], filtered_day['총생활인구수'], fontproperties=font_name) # , marker='o'
+    ax.plot(filtered_day['시간대구분'], filtered_day['총생활인구수']) # , marker='o'
     ax.set_title(f"{code_to_name(sgg_seViz)}의 {selected_month} {selected_day}일 시간대별 생활인구수", fontproperties=font_name)
     ax.set_xlabel("시간")
     ax.set_ylabel("생활인구수")
