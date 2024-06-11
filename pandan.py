@@ -41,7 +41,7 @@ def pandan():
     
     # 주거지 판단
     if daytime_population < late_evening_population:
-        st.markdown(f" {code_to_name(sgg_nm)}는 주거지로 판단됩니다.")
+        st.subheader(f" {code_to_name(sgg_nm)}는 주거지로 판단됩니다.")
     else:
         st.subheader(f" {code_to_name(sgg_nm)}는 주거지가 아닌 자치구로 판단됩니다.")
         
