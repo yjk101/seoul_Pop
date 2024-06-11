@@ -11,9 +11,8 @@ from seViz import code_to_name
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 
-font_path = 'NanumGothic-Bold.ttf'  # 나눔고딕 폰트 경로
-font_name = fm.FontProperties(fname=font_path, size=10) # .get_name()
-# plt.rc('font', family=font_name)
+path = 'NanumGothic-Bold.ttf'
+fontprop = fm.FontProperties(fname=path, size=12)
 
 def pandan():
     # 데이터 불러오기
@@ -33,9 +32,9 @@ def pandan():
     fig, ax = plt.subplots()
     grouped_df = filtered_df.groupby('시간대구분')['총생활인구수'].mean()
     grouped_df.plot(kind='line', ax=ax, linestyle='-')
-    ax.set_title(f"{code_to_name(sgg_nm)} 시간대별 평균 생활인구수", fontproperties=font_name)
-    ax.set_xlabel("시간", fontproperties=font_name)
-    ax.set_ylabel("평균 생활인구수", fontproperties=font_name)
+    ax.set_title(f"{code_to_name(sgg_nm)} 시간대별 평균 생활인구수", fontproperties=fontprop)
+    ax.set_xlabel("시간", fontproperties=fontprop)
+    ax.set_ylabel("평균 생활인구수", fontproperties=fontprop)
     st.pyplot(fig)
     
     
