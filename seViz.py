@@ -89,9 +89,9 @@ def seViz(total_df):
     
     fig, ax = plt.subplots()
     ax.plot(daily_pop['day'], daily_pop['총생활인구수']) # , marker='o'
-    ax.set_title(f"{code_to_name(sgg_seViz)} 생활인구수 변화", fontproperties=fontprop)
-    ax.set_xlabel("날짜", fontproperties=fontprop)
-    ax.set_ylabel("생활인구수" , fontproperties=fontprop)
+    ax.set_title(f"{code_to_name(sgg_seViz)} 생활인구수 변화", fontproperties=fm.FontProperties(fname='NanumGothic-Bold.ttf'))
+    ax.set_xlabel("날짜", fontproperties=fm.FontProperties(fname='NanumGothic-Bold.ttf'))
+    ax.set_ylabel("생활인구수", fontproperties=fm.FontProperties(fname='NanumGothic-Bold.ttf'))
     # ax.set_ylim(0, max_population)
     ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, loc: "{:,}".format(int(x))))  # y 축 단위 설정
     st.pyplot(fig)
@@ -103,9 +103,9 @@ def seViz(total_df):
     
     fig, ax = plt.subplots()
     ax.plot(filtered_day['시간대구분'], filtered_day['총생활인구수']) # , marker='o'
-    ax.set_title(f"{code_to_name(sgg_seViz)}의 {selected_month} {selected_day}일 시간대별 생활인구수", fontproperties=fontprop)
-    ax.set_xlabel("시간", fontproperties=fontprop)
-    ax.set_ylabel("생활인구수", fontproperties=fontprop)
+    ax.set_title(f"{code_to_name(sgg_seViz)}의 {selected_month} {selected_day}일 시간대별 생활인구수", fontproperties=fm.FontProperties(fname='NanumGothic-Bold.ttf'))
+    ax.set_xlabel("시간", fontproperties=fm.FontProperties(fname='NanumGothic-Bold.ttf'))
+    ax.set_ylabel("생활인구수", fontproperties=fm.FontProperties(fname='NanumGothic-Bold.ttf'))
     # ax.set_ylim(0, max_population)
     ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, loc: "{:,}".format(int(x))))  # y 축 단위 설정
     st.pyplot(fig)
