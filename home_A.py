@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 from PIL import Image
 
-font_path = 'NanumGothic-Bold.ttf'  # 나눔고딕 폰트 경로
-font_name = fm.FontProperties(fname=font_path, size=10).get_name()
-plt.rc('font', family=font_name)
+#font_path = 'NanumGothic-Bold.ttf'  # 나눔고딕 폰트 경로
+#font_name = fm.FontProperties(fname=font_path, size=10).get_name()
+#plt.rc('font', family=font_name)
 
 def home():
     st.markdown("## 프로젝트 개요 \n"
