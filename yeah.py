@@ -52,10 +52,11 @@ def yeah():
     # 주거 유형별 예측치 시각화
     ax.plot(forecast_30days['ds'], forecast_30days['yhat'], label='예측된 평균 생활인구수')
     ax.fill_between(forecast_30days['ds'], forecast_30days['yhat_lower'], forecast_30days['yhat_upper'], color='gray', alpha=0.2, label='예측 범위')
-    
-    ax.set_title(f'{code_to_name(sgg_nmz)} {periods}일간 평균 생활인구수 예측')
-    ax.set_xlabel(f'날짜')
-    ax.set_ylabel(f'평균 생활인구수')
+
+    st.subheader(f'{code_to_name(sgg_nmz)} {periods}일간 평균 생활인구수 예측')
+    # ax.set_title(f'{code_to_name(sgg_nmz)} {periods}일간 평균 생활인구수 예측')
+    #ax.set_xlabel(f'날짜')
+    #ax.set_ylabel(f'평균 생활인구수')
     ax.legend()
     
     for tick in ax.get_xticklabels():
