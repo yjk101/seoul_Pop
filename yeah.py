@@ -18,7 +18,7 @@ fontprop = fm.FontProperties(fname=path, size=12)
 
 def yeah():
 
-    total_df = pd.read_csv('/BigData/data/LOCAL_PEOPLE_GU_UTF.csv')
+    total_df = pd.read_csv('LOCAL_PEOPLE_GU_UTF.csv')
     total_df['기준일ID'] = pd.to_datetime(total_df['기준일ID'], format='%Y%m%d')
     sgg_nmz = st.sidebar.selectbox("자치구", total_df['자치구코드'].unique(), format_func=code_to_name, key='gu_selectbox')
     periods = 30
