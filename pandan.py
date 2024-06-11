@@ -10,6 +10,10 @@ import pandas as pd
 from seViz import code_to_name
 import matplotlib.pyplot as plt
 
+font_path = 'NanumGothic.ttf'  # 나눔고딕 폰트 경로
+font_name = fm.FontProperties(fname=font_path, size=10).get_name()
+plt.rc('font', family=font_name)
+
 def pandan():
     # 데이터 불러오기
     total_df = pd.read_csv('LOCAL_PEOPLE_GU_UTF.csv')
